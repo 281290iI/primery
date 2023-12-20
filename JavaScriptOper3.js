@@ -287,17 +287,21 @@ unction isTriangle(a, b, c) {
 //«fan» — вентиляция. В этом режиме кондиционер осуществляет только вентиляцию воздуха и не изменяет температуру в комнате. Кондиционер достаточно мощный, поэтому при настройке на правильный режим работы он за час доводит температуру в комнате до желаемой.
 //Требуется написать программу, которая по заданной температуре в комнате troom, установленным на кондиционере желаемой температуре tcond и режиму работы определяет температуру, которая установится в комнате через час.
 
-function calculateTemperature(troom, tcond, mode) {
-  if (mode === 'freeze') {
-    return Math.min(troom, tcond);
-  } else if (mode === 'heat') {
-    return Math.max(troom, tcond);
-  } else if (mode === 'auto') {
-    return tcond;
-  } else if (mode === 'fan') {
-    return troom;
-  }
-}
+let troom = prompt("Температура ", '');
+let tcond = prompt("Задали ", '');
+let mode = prompt("Метод ", '');
+
+if (troom < tcond && mode == "heat") {
+  alert(tcond);
+} else if (troom > tcond && mode == "freeze") {
+  alert(troom);
+} else if (troom > tcond && mode == "heat") {
+  alert(troom);
+} else if (troom < tcond && mode == "freeze") {
+  alert(troom);
+} else {
+    alert("Кодиционер выключен")
+};
 
 // Напишите код, который будет спрашивать логин с помощью prompt.
 // Если посетитель вводит «Админ», то prompt запрашивает пароль, если ничего не введено или нажата клавиша Esc – показать «Отменено», в противном случае отобразить «Я вас не знаю».
